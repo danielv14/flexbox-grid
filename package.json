@@ -1,0 +1,17 @@
+{
+  "name": "flexbox-grid",
+  "version": "1.0.0",
+  "description": "A Flexbox based grid system",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "flexbox",
+    "scss",
+    "sass",
+    "grid"
+  ],
+  "author": "Daniel Vernberg",
+  "license": "ISC"
+}
