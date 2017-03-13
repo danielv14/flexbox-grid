@@ -6,7 +6,7 @@ This is a repository for a responsive flexbox based grid system inspired by [Boo
 ## Development
 ```bash
 # Starts a development server
-# with livereload at localhost:8080 and system watches for changes
+# with livereload at localhost:8080
 $ npm start
 # Compile sass files
 $ npm build
@@ -37,13 +37,13 @@ The prefixes works the same way as the prefixes work in Bootstraps grid system.
 Flexbox is a very powerful tool to set alignment with css and this grid system comes with helpful classes to set alignments of elements. The alignment helpers are for the `.row` class since the parent determines how it's children should align.
 
 All alignment classes are prefixed with the screen size they involve. The following alignment helpers are available:
-* `prefix-start` justifies the content at the start
-* `prefix-end` justifies the content at the end
-* `prefix-center` justifies the content at the center
-* `prefix-around` spaces the remaining room around the columns
-* `prefix-between` spaces the remaining room between the columns
-* `prefix-top` align items at the top of the parent
-* `prefix-bottom` align items at the bottom of the parent
-* `prefix-middle` align items at the middle of parents top and bottom
+* `prefix-start` justifies the content at the start.
+* `prefix-end` justifies the content at the end.
+* `prefix-center` justifies the content at the center.
+* `prefix-around` spaces the remaining room around the columns.
+* `prefix-between` spaces the remaining room between the columns.
+* `prefix-top` align items at the top of the parent.
+* `prefix-bottom` align items at the bottom of the parent.
+* `prefix-middle` align items at the middle of parents top and bottom.
 
-To center content both vertical and horizontal use `.row .prefix-center .prefix-middle`. 
+To center content both vertical and horizontal use `.row .prefix-center .prefix-middle`.
