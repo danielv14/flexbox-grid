@@ -1,5 +1,6 @@
 var gulp = require('gulp'),
     connect = require('gulp-connect'),
+    autoprefixer = require('gulp-autoprefixer'),
     sass = require('gulp-sass');
 
 
@@ -20,7 +21,12 @@ gulp.task('html', function () {
 gulp.task('sass', function () {
   return gulp.src('./scss/grid.scss')
     .pipe(sass().on('error', sass.logError))
+    .pipe(autoprefixer({
+           browsers: ['last 2 versions'],
+           cascade: false
+       }))
     .pipe(gulp.dest('./'))
+
     .pipe(connect.reload());
 });
 
