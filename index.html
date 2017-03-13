@@ -2,12 +2,145 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Flexbox Grid</title>
+  <title>FlexGrid</title>
   <link rel="stylesheet" href="grid.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+
+  <style>
+    html {
+      font-family: 'Open Sans', sans-serif;
+      background-color: #FAFAFA;
+    }
+    p {line-height: 1.8rem;}
+    .container {
+      background-color: white;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.10);
+    }
+  </style>
 </head>
 <body>
+  <h1 style="text-align: center;">Column Demo</h1>
+  <div class="container">
+    <h2 id="lg">Large columns</h2>
+    <div class="row">
+      <div class="col-lg-4">
+        <h3>col-lg-4</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit incidunt voluptatem placeat facilis, dolore deleniti. Praesentium voluptates dolores, veniam magni a adipisci facere obcaecati. Atque aliquam cupiditate illo libero ratione!</p>
+      </div>
+      <div class="col-lg-4">
+        <h3>col-lg-4</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut consequuntur veniam, dolores at quasi voluptatibus illo voluptate accusantium itaque. Doloribus ipsum suscipit ab, iste ea nemo eos veniam veritatis minima!</p>
+      </div>
+      <div class="col-lg-4">
+        <h3>col-lg-4</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas nesciunt quos, id libero sit deleniti expedita mollitia quisquam vel! Dolor nemo pariatur esse quas nihil vel non dolorem, aspernatur sit.</p>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="container">
+    <h2 id="md">Medium columns</h2>
+    <div class="row">
+      <div class="col-md-4">
+        <h3>col-md-4</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium repudiandae accusantium odit consectetur enim, eum, soluta accusamus ut, voluptatem aliquid illum, consequatur tempore. Eaque placeat voluptates reiciendis doloremque, quidem labore.</p>
+      </div>
+      <div class="col-md-4">
+        <h3>col-md-4</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum doloribus numquam libero corporis consectetur, id aut quibusdam. Odit veritatis consequuntur fuga voluptates aperiam nam magni, incidunt impedit sed maiores totam!</p>
+      </div>
+      <div class="col-md-4">
+        <h3>col-md-4</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, maxime nesciunt illo quasi expedita culpa sequi, aliquam soluta tempore, commodi repellendus, perspiciatis corporis necessitatibus? Aliquam quam rerum, laboriosam ipsum quaerat.</p>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="container">
+    <h2 id="sm">Small columns</h2>
+    <div class="row">
+      <div class="col-sm-4">
+        <h3>col-sm-4</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae, doloremque tenetur aspernatur illum laborum excepturi debitis, id officia officiis deserunt nesciunt provident quos, sed esse. Atque debitis expedita asperiores, possimus.</p>
+      </div>
+      <div class="col-sm-4">
+        <h3>col-sm-4</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi assumenda, ipsam atque. Optio veritatis distinctio sapiente quos veniam, autem saepe et delectus! Vel voluptatem laudantium, temporibus, quaerat voluptatum error! Suscipit.</p>
+      </div>
+      <div class="col-sm-4">
+        <h3>col-sm-4</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat magni aperiam consequatur sapiente doloribus provident repellat, magnam est labore dignissimos quisquam illum, saepe quia eum delectus inventore officia totam quas!</p>
+      </div>
+    </div>
+  </div>
 
-  
+  <br>
+
+  <div class="container">
+    <h2>Extra small</h2>
+    <div class="row">
+      <div class="col-xs-6 col-lg-4 col-lg-offset-2">
+        <h3>xs-6 lg-4 lg-offset-2</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum odio totam debitis, praesentium illum exercitationem voluptate ad tempore beatae fugiat nesciunt laudantium atque, temporibus, voluptas accusamus corporis distinctio quaerat quas.</p>
+      </div>
+      <div class="col-xs-6 col-lg-4">
+        <h3>xs-6 lg-4</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia quam repellat quaerat consequatur esse quasi nihil, fugiat iste maiores asperiores veritatis. Aspernatur id, consequuntur in deserunt voluptatum amet animi fuga.</p>
+      </div>
+    </div>
+  </div>
+
+  <br>
+
+  <div class="container">
+    <h2>Mixed columns</h2>
+    <div class="row">
+      <div class="col-lg-3 col-md-4 col-sm-6">
+        <h3>lg-3 md-4 sm-6</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit, quam maxime est earum ipsam voluptates et delectus, provident aliquid fuga nostrum illum minima repellendus? Delectus deleniti, nostrum excepturi voluptatem voluptate!</p>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-6">
+        <h3>lg-3 md-4 sm-6</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem quisquam, magni fugit reiciendis repellat quaerat similique voluptas. Doloremque esse incidunt reiciendis ex quidem, ipsam. Recusandae accusamus totam amet, quo voluptas.</p>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-6">
+        <h3>lg-3 md-4 sm-6</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo provident ducimus iste vitae quod tenetur facere assumenda beatae, minima, saepe officia delectus quaerat sunt debitis nesciunt similique accusamus numquam! Saepe.</p>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-6">
+        <h3>lg-3 md-4 sm-6</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus enim in, quos architecto tenetur recusandae. Eveniet ea ad ullam ipsa voluptates molestias at sequi, velit obcaecati perspiciatis, deleniti deserunt, vel.</p>
+      </div>
+    </div>
+  </div>
+
+  <br>
+
+  <div class="container">
+    <h2>Offsets</h2>
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2">
+        <h3>sm-8 sm-offset-2</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos cumque atque, pariatur sint, harum itaque ab quos totam et culpa sunt minus omnis facere rem animi esse voluptatibus ipsam repellat.</p>
+      </div>
+    </div>
+  </div>
+
+  <br>
+
+  <div class="container">
+    <h2>Alignments</h2>
+    <div class="row md-around md-middle">
+      <div class="col-md-3">
+        <h3>col-md-3 with md-around and md-middle</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum aperiam ipsa tempore, eos hic dolorem nemo doloribus, quae deleniti aspernatur blanditiis quas adipisci atque, mollitia alias ad soluta consequuntur! Ut.</p>
+      </div>
+      <div class="col-md-3">
+        <h3>col-md-3 with md-around and md-middle</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa quisquam iusto pariatur corrupti quaerat eum labore dicta nulla fugit. Sequi non autem necessitatibus, porro quidem temporibus sapiente aliquam, fuga ullam.</p>
+      </div>
+    </div>
+  </div>
 
 </body>
 </html>
