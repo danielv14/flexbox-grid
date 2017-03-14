@@ -7,6 +7,13 @@
 @mixin columns-set($prefix) {
   // xs columns already has below values
   @if $prefix != 'xs' {
+    // set reordering classes
+    .#{$class-col}-#{$prefix}-first {
+      order: -1;
+    }
+    .#{$class-col}-#{$prefix}-last {
+      order: 1;
+    }
     @for $i from 1 through $columns {
       .#{$class-col}-#{$prefix}-#{$i} {
         flex: 0 0 100% / $columns * $i;
@@ -14,12 +21,7 @@
       .#{$class-col}-#{$prefix}-#{$class-offset}-#{$i} {
         margin-left: 100% / $columns * $i;
       }
-      .#{$class-col}-#{$prefix}-first {
-        order: -1;
-      }
-      .#{$class-col}-#{$prefix}-last {
-        order: 1;
-      }
+
     }
   }
 }
@@ -36,15 +38,16 @@
   // with media queries and thus are created with
   // different flex value than the rest of the columns
   @if $prefix != 'xs' {
+    // Set default reordering classes
+    .#{$class-col}-#{$prefix}-first, .#{$class-col}-#{$prefix}-last {
+      order: 0;
+    }
     @for $i from 1 through $columns {
       .#{$class-col}-#{$prefix}-#{$i} {
         flex: 0 0 100%;
       }
       .#{$class-col}-#{$prefix}-#{$class-offset}-#{$i} {
         margin-left: 0;
-      }
-      .#{$class-col}-#{$prefix}-first, .#{$class-col}-#{$prefix}-last {
-        order: 0;
       }
     }
   } @else {
