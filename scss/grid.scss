@@ -11,10 +11,15 @@
 */
 
 // Max width of continer class
-$container-width: 960px;
+$container-lg: 1140px;
+$container-md: 940px;
+$container-sm: 740px;
+$container-xs: 510px;
+
 
 // Set number of columns
 $columns: 12;
+$gutter: 30px;
 
 // Set names for rows, columns and offset classes
 $class-row: 'row';
@@ -71,10 +76,11 @@ $breakpoints: (
   // xs columns already has below values
   @if $prefix != 'xs' {
     // set reordering classes
-    @include column-reordering($prefix)
+    @include column-reordering($prefix);
     @for $i from 1 through $columns {
       .#{$class-col}-#{$prefix}-#{$i} {
         flex: 0 0 100% / $columns * $i;
+        padding: 0 $gutter/2;
       }
       .#{$class-col}-#{$prefix}-#{$class-offset}-#{$i} {
         margin-left: 100% / $columns * $i;
@@ -110,6 +116,7 @@ $breakpoints: (
     @for $i from 1 through $columns {
       .#{$class-col}-xs-#{$i} {
         flex: 0 0 100% / $columns * $i;
+        padding: 0 $gutter/4;
       }
       .#{$class-col}-xs-#{$class-offset}-#{$i} {
         margin-left: 100% / $columns * $i;
@@ -154,11 +161,19 @@ $breakpoints: (
   Mixins to setup containers
 */
 @mixin containers-setup() {
+
   .container {
-    max-width: $container-width;
+    max-width: $container-sm + $gutter;
     margin: auto;
     padding: 10px;
   }
+  @media (min-width: $screen-md) {
+    .container {max-width: $container-md + $gutter;}
+  }
+  @media (min-width: $screen-lg) {
+    .container {max-width: $container-lg + $gutter;}
+  }
+
   .container-fluid {
     max-width: 98%;
     margin: auto;

@@ -32,6 +32,7 @@ The above example demonstrates a container with a fixed max-width, it's child ro
 This grid system utilizes variables that can easily be modified to customize the grid itself. The following variables are available for customization:
 * `$container-width`: Defaults to 960px. Sets the max width of the `.container` class.
 * `$columns`: Defaults to 12. Sets the number of columns. Used as a number to loop though to generate columns.
+* `$gutter`: Defaults to 30px. The column gutter (padding left and right).
 * `$class-row`: Defaults to 'row'. Sets the name of flexbox parent.
 * `$class-col`: Defaults to 'col'. Sets the prefixed name for column classes.
 * `$class-offset`: Defaults to 'offset'. Name of the offset classes to offset columns.
@@ -39,6 +40,12 @@ This grid system utilizes variables that can easily be modified to customize the
 * `$screen-sm`: Defaults to 768px. Breakpoint for  small screen sizes.
 * `$screen-md`: Defaults to 992px. Breakpoint for medium screen sizes.
 * `$screen-lg`: Defaults to 1200px. Breakpoint for large screen sizes.
+* `$container-xs`: Defaults to 510px. Max-width for containers on extra small screens. Max-width is calculated based on `$gutter` valuea
+* `$container-sm`: Defaults to 740px. Max-width for containers on small screens. Max-width is calculated based on `$gutter` valuea
+* `$container-md`: Defaults to 940px. Max-width for containers on medium screens. Max-width is calculated based on `$gutter` valuea
+* `$container-lg`: Defaults to 1140px. Max-width for containers on large screens. Max-width is calculated based on `$gutter` valuea
+
+
 
 Columns are generated in the following manner based of the class names variables: `.$class-col-$prefix-$column-iteration` where $prefix comes from a list inside `$breakpoints` and `$column-iteration` represents the current loop value. Check out the mixins to see more info about how looping is used to create the columns.
 
