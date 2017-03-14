@@ -5,6 +5,7 @@
   @param {string} $prefix - the name of the class prefix
 */
 @mixin columns-set($prefix) {
+  // xs columns already has below values
   @if $prefix != 'xs' {
     @for $i from 1 through $columns {
       .col-#{$prefix}-#{$i} {
