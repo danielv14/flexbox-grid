@@ -167,8 +167,6 @@ $breakpoints: (
   }
 }
 
-
-
 /*
   Mixins to be called to generate the grid
  */
@@ -181,40 +179,31 @@ $breakpoints: (
   @include columns-set($prefix);
 }
 
+
+
 /*
-  Styling for containers
+  Build the grid system in 3 steps.
+  First setup containers, row flex class and handle box sizing for column classes.
+  Then loop through the breakpoints and create the grid and helper classes.
+  Lastly loop again and set measurements for each media breakpoint.
 */
+
+// Step 1
 @include setup-containers();
-
-
-
-/*
- Styling for row class which is the flex parent
-*/
 .#{$class-row} {
   display: flex;
   flex-wrap: wrap;
 }
-
-/*
-  Set box sizing for each column class.
-  Columns should include content, padding and borders in their element
-*/
 [class*=#{$class-col}-] {
   box-sizing: border-box;
 }
-
-
-/*
-  Build the grid system in 2 steps.
-  First loop through the breakpoints and create the grid and helper classes.
-  Then loop again and set measurements for each media breakpoint.
-*/
+// Step 2
 @each $val in $breakpoints {
   $namespace: nth($val, 1);
   $size: nth($val, 2);
   @include grid-generate($namespace);
 }
+// Step 3
 @each $val in $breakpoints {
   $namespace: nth($val, 1);
   $size: nth($val, 2);
