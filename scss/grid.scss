@@ -1,9 +1,169 @@
-@import
-  'variables',
-  'mixins';
+/*
+  Flexbox Grid
+  Version: 1.0.0
+
+  A Flexbox based grid system built with scss
+  By Daniel Vernberg - daniel.vernberg@gmail.com
+*/
 
 /*
-  Containers
+  Setup of variables
+*/
+
+// Max width of continer class
+$container-width: 960px;
+
+// Set number of columns
+$columns: 12;
+
+// Set names for rows, columns and offset classes
+$class-row: 'row';
+$class-col: 'col';
+$class-offset: 'offset';
+
+// Screen sizes
+$screen-xs: 480px;
+$screen-sm: 768px;
+$screen-md: 992px;
+$screen-lg: 1200px;
+
+// Breakpoints to be looped over to create the grid system
+$breakpoints: (
+  (xs, $screen-xs),
+  (sm, $screen-sm),
+  (md, $screen-md),
+  (lg, $screen-lg)
+) !default;
+
+
+/*
+  Mixin to handle creation of reordering classes
+  and also set the reordering state in media breakpoints.
+  Call either with passed $state value of 'create' or not depending on if mixin
+  is called in a context of media query or not. 'create' should not be
+  passed in context of media query
+
+  @param {string} $prefix - the prefix for reordering classes.
+  @param {string} $state default:set - the state of which reordering classes should be set.
+*/
+@mixin column-reordering($prefix, $state: 'set') {
+  @if $state == 'create' {
+    .#{$class-col}-#{$prefix}-first, .#{$class-col}-#{$prefix}-last {
+      order: 0;
+    }
+  } @else {
+    .#{$class-col}-#{$prefix}-first {
+      order: -1;
+    }
+    .#{$class-col}-#{$prefix}-last {
+      order: 1;
+    }
+  }
+}
+
+/*
+  Mixin to dynamically set colums classes.
+  Also sets prefixed offset classes to offset columns based on screen size
+  Dependant on variable $columns count
+  @param {string} $prefix - the name of the class prefix
+*/
+@mixin columns-set($prefix) {
+  // xs columns already has below values
+  @if $prefix != 'xs' {
+    // set reordering classes
+    @include column-reordering($prefix)
+    @for $i from 1 through $columns {
+      .#{$class-col}-#{$prefix}-#{$i} {
+        flex: 0 0 100% / $columns * $i;
+      }
+      .#{$class-col}-#{$prefix}-#{$class-offset}-#{$i} {
+        margin-left: 100% / $columns * $i;
+      }
+
+    }
+  }
+}
+
+
+/*
+  Mixin to create default column classes.
+  Also creates prefixed offset classes to offset columns based on screen size
+  Dependant on variable $columns count.
+  @param {string} $prefix - the name of the class prefix
+*/
+@mixin columns-create($prefix) {
+  // xs columns initial state are not changed
+  // with media queries and thus are created with
+  // different flex value than the rest of the columns
+  @if $prefix != 'xs' {
+    // Set default reordering classes
+    @include column-reordering($prefix ,'create');
+    @for $i from 1 through $columns {
+      .#{$class-col}-#{$prefix}-#{$i} {
+        flex: 0 0 100%;
+      }
+      .#{$class-col}-#{$prefix}-#{$class-offset}-#{$i} {
+        margin-left: 0;
+      }
+    }
+  } @else {
+    @for $i from 1 through $columns {
+      .#{$class-col}-xs-#{$i} {
+        flex: 0 0 100% / $columns * $i;
+      }
+      .#{$class-col}-xs-#{$class-offset}-#{$i} {
+        margin-left: 100% / $columns * $i;
+      }
+    }
+  }
+
+}
+
+/*
+  Mixin to set .row helper classes for how to align the children
+  @param {string} $prefix - the  name of the class prefix
+*/
+@mixin alignment-set($prefix) {
+  .#{$prefix}-start {
+    justify-content: flex-start;
+  }
+  .#{$prefix}-end {
+    justify-content: flex-end;
+  }
+  .#{$prefix}-center {
+    justify-content: center;
+  }
+  .#{$prefix}-around {
+    justify-content: space-around;
+  }
+  .#{$prefix}-between {
+    justify-content: space-between;
+  }
+  .#{$prefix}-top {
+    align-items: flex-start;
+  }
+  .#{$prefix}-bottom {
+    align-items: flex-end;
+  }
+  .#{$prefix}-middle {
+    align-items: center;
+  }
+}
+
+/*
+  Mixins to be called to generate the grid
+ */
+@mixin grid-generate($prefix) {
+  @include columns-create($prefix);
+  @include alignment-set($prefix);
+}
+
+@mixin grid-size($prefix) {
+  @include columns-set($prefix);
+}
+
+/*
+  Styling for containers
 */
 .container {
   max-width: $container-width;
@@ -26,8 +186,10 @@
   flex-wrap: wrap;
 }
 
-// Set box sizing for each col class
-// Column should include content, padding and borders in their element
+/*
+  Set box sizing for each column class.
+  Columns should include content, padding and borders in their element
+*/
 [class*=#{$class-col}-] {
   box-sizing: border-box;
 }

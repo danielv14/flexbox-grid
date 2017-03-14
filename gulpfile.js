@@ -19,7 +19,7 @@ gulp.task('html', function () {
 
 // Sass task
 gulp.task('sass', function () {
-  return gulp.src('./scss/*.scss')
+  return gulp.src('./scss/grid.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer({
            browsers: ['last 2 versions'],
@@ -33,7 +33,7 @@ gulp.task('sass', function () {
 // Watch task
 gulp.task('watch', function () {
   gulp.watch(['*.html'], ['html']);
-  gulp.watch(['./scss/*.scss'], ['sass'])
+  gulp.watch(['./scss/grid.scss'], ['sass'])
 });
 
 // Default
