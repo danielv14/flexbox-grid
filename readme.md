@@ -40,7 +40,7 @@ This grid system utilizes variables that can easily be modified to customize the
 * `$screen-md`: Defaults to 992px. Breakpoint for medium screen sizes.
 * `$screen-lg`: Defaults to 1200px. Breakpoint for large screen sizes.
 
-The `$screen` variables are used in conjunction with the `$breakpoints` object that the grids column prefixes and breakpoints are generated from. Currently the breakpoints array contain the above `$screen` variables with namespaces: 'xs', 'sm', 'md' and 'lg'.
+The `$screen` variables are used in conjunction with the `$breakpoints` object that the grids column prefixes and breakpoints are generated from. Currently the breakpoints array contain the above `$screen` variables with namespaces: `xs`, `sm`, `md` and `lg`.
 
 To add a new column prefix with it's own media breakpoint you can customize the `$breakpoints` array like this:
 ```scss
