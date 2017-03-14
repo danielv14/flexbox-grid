@@ -43,7 +43,7 @@ This grid system utilizes variables that can easily be modified to customize the
 The `$screen` variables are used in conjunction with the `$breakpoints` object that the grids column prefixes and breakpoints are generated from. Currently the breakpoints array contain the above `$screen` variables with namespaces: 'xs', 'sm', 'md' and 'lg'.
 
 To add a new column prefix with it's own media breakpoint you can customize the `$breakpoints` array like this:
-```
+```scss
   // add new screen size variable
   $screen-xl: 1400px;
   $breakpoints: (
