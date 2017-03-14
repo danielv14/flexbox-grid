@@ -48,12 +48,14 @@ To add a new column prefix with it's own media breakpoint you can customize the 
 ```scss
   // add new screen size variable
   $screen-xl: 1400px;
+
+  // append breakpoints array with new prefix and the new screen size variable
   $breakpoints: (
     (xs, $screen-xs),
     (sm, $screen-sm),
     (md, $screen-md),
     (lg, $screen-lg),
-    (xl, $screen-xl) // add new prefix and the new screen size variable
+    (xl, $screen-xl)
   ) !default;
 ```
 The above example will generate column classes and offset classes prefixed with `xl` as well as the other column classes. The grid will also generate a media query based on the value of `$screen-xl`.
