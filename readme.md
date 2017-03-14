@@ -54,7 +54,11 @@ To add a new column prefix with it's own media breakpoint you can customize the 
     (xl, $screen-xl) // add new prefix and the new screen size variable
   ) !default;
 ```
-The above example will generate column classes and offset classes prefixed with `xl` as well as the other column classes. The grid will also generate a media query based on the value of `$screen-xsl`.
+The above example will generate column classes and offset classes prefixed with `xl` as well as the other column classes. The grid will also generate a media query based on the value of `$screen-xl`.
+
+Even if `xs` prefix has a screen size variable no media query are generated for this prefix. The reason for this is that the column dimension for this prefix should not be affected or collapse for any screen size.
+
+> It is important that the `$breakpoints` array holds the list of breakpoints and prefixes in ascending order.
 
 ### Columns
 4 different column prefixes are available as default in this grid system. `xs`, `sm`, `md` and `lg` are the prefixes and by default the grid system is built around 12 columns. See above information on how the grid and its column can be customized.
