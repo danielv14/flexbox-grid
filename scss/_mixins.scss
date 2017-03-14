@@ -1,4 +1,29 @@
 /*
+  Mixin to handle creation of reordering classes
+  and also set the reordering state in media breakpoints.
+  Call either with passed $state value of 'create' or not depending on if mixin
+  is called in a context of media query or not. 'create' should not be
+  passed in context of media query
+
+  @param {string} $prefix - the prefix for reordering classes.
+  @param {string} $state default:set - the state of which reordering classes should be set.
+*/
+@mixin column-reordering($prefix, $state: 'set') {
+  @if $state == 'create' {
+    .#{$class-col}-#{$prefix}-first, .#{$class-col}-#{$prefix}-last {
+      order: 0;
+    }
+  } @else {
+    .#{$class-col}-#{$prefix}-first {
+      order: -1;
+    }
+    .#{$class-col}-#{$prefix}-last {
+      order: 1;
+    }
+  }
+}
+
+/*
   Mixin to dynamically set colums classes.
   Also sets prefixed offset classes to offset columns based on screen size
   Dependant on variable $columns count
@@ -8,12 +33,7 @@
   // xs columns already has below values
   @if $prefix != 'xs' {
     // set reordering classes
-    .#{$class-col}-#{$prefix}-first {
-      order: -1;
-    }
-    .#{$class-col}-#{$prefix}-last {
-      order: 1;
-    }
+    @include column-reordering($prefix)
     @for $i from 1 through $columns {
       .#{$class-col}-#{$prefix}-#{$i} {
         flex: 0 0 100% / $columns * $i;
@@ -39,9 +59,7 @@
   // different flex value than the rest of the columns
   @if $prefix != 'xs' {
     // Set default reordering classes
-    .#{$class-col}-#{$prefix}-first, .#{$class-col}-#{$prefix}-last {
-      order: 0;
-    }
+    @include column-reordering($prefix ,'create');
     @for $i from 1 through $columns {
       .#{$class-col}-#{$prefix}-#{$i} {
         flex: 0 0 100%;

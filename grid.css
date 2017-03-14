@@ -3,6 +3,16 @@
   inspired from Bootstrap's screen sizes
 */
 /*
+  Mixin to handle creation of reordering classes
+  and also set the reordering state in media breakpoints.
+  Call either with passed $state value of 'create' or not depending on if mixin
+  is called in a context of media query or not. 'create' should not be
+  passed in context of media query
+
+  @param {string} $prefix - the prefix for reordering classes.
+  @param {string} $state default:set - the state of which reordering classes should be set.
+*/
+/*
   Mixin to dynamically set colums classes.
   Also sets prefixed offset classes to offset columns based on screen size
   Dependant on variable $columns count
