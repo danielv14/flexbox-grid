@@ -157,7 +157,6 @@ $breakpoints: (
   Mixins to setup containers
 */
 @mixin containers-setup() {
-
   .container {
     max-width: $container-sm + $gutter;
     margin: auto;
