@@ -5,15 +5,12 @@
 /*
   Containers
 */
-
-// Container with fixed max-width
 .container {
   max-width: $container-width;
   margin: auto;
   padding: 10px;
 }
 
-// Fluid container based on percentage
 .container-fluid {
   max-width: 98%;
   margin: auto;
