@@ -36,7 +36,7 @@
   margin: 1%; }
 
 /*
- Styling for .row class which is the flex parent
+ Styling for row class which is the flex parent
 */
 .row {
   display: -ms-flexbox;

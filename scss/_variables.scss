@@ -4,6 +4,12 @@ $container-width: 960px;
 // Set number of columns
 $columns: 12;
 
+// Set names for rows, columns and offset classes
+$class-row: 'row';
+$class-col: 'col';
+$class-offset: 'offset';
+
+
 /*
   Set screen sizes for media queries.
   inspired from Bootstrap's screen sizes

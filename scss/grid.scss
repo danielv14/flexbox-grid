@@ -19,16 +19,16 @@
 }
 
 /*
- Styling for .row class which is the flex parent
+ Styling for row class which is the flex parent
 */
-.row {
+.#{$class-row} {
   display: flex;
   flex-wrap: wrap;
 }
 
 // Set box sizing for each col class
 // Column should include content, padding and borders in their element
-[class*=col-] {
+[class*=#{$class-col}-] {
   box-sizing: border-box;
 }
 

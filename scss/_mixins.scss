@@ -8,10 +8,10 @@
   // xs columns already has below values
   @if $prefix != 'xs' {
     @for $i from 1 through $columns {
-      .col-#{$prefix}-#{$i} {
+      .#{$class-col}-#{$prefix}-#{$i} {
         flex: 0 0 100% / $columns * $i;
       }
-      .col-#{$prefix}-offset-#{$i} {
+      .#{$class-col}-#{$prefix}-#{$class-offset}-#{$i} {
         margin-left: 100% / $columns * $i;
       }
     }
@@ -31,19 +31,19 @@
   // different flex value than the rest of the columns
   @if $prefix != 'xs' {
     @for $i from 1 through $columns {
-      .col-#{$prefix}-#{$i} {
+      .#{$class-col}-#{$prefix}-#{$i} {
         flex: 0 0 100%;
       }
-      .col-#{$prefix}-offset-#{$i} {
+      .#{$class-col}-#{$prefix}-#{$class-offset}-#{$i} {
         margin-left: 0;
       }
     }
   } @else {
     @for $i from 1 through $columns {
-      .col-xs-#{$i} {
+      .#{$class-col}-xs-#{$i} {
         flex: 0 0 100% / $columns * $i;
       }
-      .col-xs-offset-#{$i} {
+      .#{$class-col}-xs-#{$class-offset}-#{$i} {
         margin-left: 100% / $columns * $i;
       }
     }
