@@ -1,7 +1,7 @@
 # Flexbox Grid
 > A Flexbox based grid system build with sass
 
-This is a repository for a responsive flexbox based grid system inspired by [Bootstrap](http://getbootstrap.com/) and [Flexbox Grid](http://flexboxgrid.com/).
+This is a repository for a responsive flexbox based grid system inspired by [Bootstrap](http://getbootstrap.com/), [Flexbox Grid](http://flexboxgrid.com/) and [scss-flex-grid](https://github.com/matthewsimo/scss-flex-grid)
 
 ## Development
 ```bash
