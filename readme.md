@@ -72,12 +72,14 @@ The prefixes works the same way as the prefixes work in Bootstraps grid system.
 ### Alignment
 Flexbox is a very powerful tool to set alignment with css and this grid system comes with helpful classes to set alignments of elements. The alignment helpers are for the `row` class since the parent determines how it's children should align.
 
-All alignment classes are prefixed with the screen size they involve. The following alignment helpers are available:
+All alignment classes are prefixed with the screen size they involve. The following alignment helpers are available that targets `justify-content` property:
 * `prefix-start` justifies the content at the start.
 * `prefix-end` justifies the content at the end.
 * `prefix-center` justifies the content at the center.
 * `prefix-around` spaces the remaining room around the columns.
 * `prefix-between` spaces the remaining room between the columns.
+
+The following alignment classes target the `align-items` property:
 * `prefix-top` align items at the top of the parent.
 * `prefix-bottom` align items at the bottom of the parent.
 * `prefix-middle` align items at the middle of parents top and bottom.
