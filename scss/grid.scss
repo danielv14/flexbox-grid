@@ -178,6 +178,25 @@ $breakpoints: (
 }
 
 /*
+  Mixin to setup row class
+*/
+@mixin row-setup() {
+  .#{$class-row} {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+/*
+  Mixin to setup box-sizing for all columns
+*/
+@mixin columns-box-sizing() {
+  [class*=#{$class-col}-] {
+    box-sizing: border-box;
+  }
+}
+
+/*
   Mixins to be called to generate the grid
  */
 @mixin grid-generate($prefix) {
@@ -198,13 +217,8 @@ $breakpoints: (
 
 // Step 1
 @include containers-setup();
-.#{$class-row} {
-  display: flex;
-  flex-wrap: wrap;
-}
-[class*=#{$class-col}-] {
-  box-sizing: border-box;
-}
+@include row-setup();
+@include columns-box-sizing();
 
 // Step 2
 @each $val in $breakpoints {
