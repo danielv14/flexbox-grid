@@ -1,6 +1,12 @@
 /*
-  Set screen sizes for media queries.
-  inspired from Bootstrap's screen sizes
+  Flexbox Grid
+  Version: 1.0.0
+
+  A Flexbox based grid system built with scss
+  By Daniel Vernberg - daniel.vernberg@gmail.com
+*/
+/*
+  Setup of variables
 */
 /*
   Mixin to handle creation of reordering classes
@@ -32,7 +38,7 @@
   Mixins to be called to generate the grid
  */
 /*
-  Containers
+  Styling for containers
 */
 .container {
   max-width: 960px;
@@ -54,6 +60,10 @@
   -ms-flex-wrap: wrap;
   flex-wrap: wrap; }
 
+/*
+  Set box sizing for each column class.
+  Columns should include content, padding and borders in their element
+*/
 [class*=col-] {
   box-sizing: border-box; }
 
