@@ -69,6 +69,9 @@ Even if `xs` prefix has a screen size variable no media query are generated for 
 
 The prefixes works the same way as the prefixes work in Bootstraps grid system.
 
+#### Reordering
+Columns can be reordered above certain media breakpoints. A column with the class of `col-md-last` will be displayed last in order for screen sizes larger than the medium breakpoint. `last` or `first` class values are available like this: `col-md-last` and `col-sm-first`
+
 ### Alignment
 Flexbox is a very powerful tool to set alignment with css and this grid system comes with helpful classes to set alignments of elements. The alignment helpers are for the `row` class since the parent determines how it's children should align.
 

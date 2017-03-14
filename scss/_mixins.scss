@@ -14,6 +14,12 @@
       .#{$class-col}-#{$prefix}-#{$class-offset}-#{$i} {
         margin-left: 100% / $columns * $i;
       }
+      .#{$class-col}-#{$prefix}-first {
+        order: -1;
+      }
+      .#{$class-col}-#{$prefix}-last {
+        order: 1;
+      }
     }
   }
 }
@@ -36,6 +42,9 @@
       }
       .#{$class-col}-#{$prefix}-#{$class-offset}-#{$i} {
         margin-left: 0;
+      }
+      .#{$class-col}-#{$prefix}-first, .#{$class-col}-#{$prefix}-last {
+        order: 0;
       }
     }
   } @else {
