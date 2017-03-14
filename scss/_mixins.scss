@@ -5,12 +5,14 @@
   @param {string} $prefix - the name of the class prefix
 */
 @mixin columns-set($prefix) {
-  @for $i from 1 through $columns {
-  	.col-#{$prefix}-#{$i} {
-  		flex: 0 0 100% / $columns * $i;
-  	}
-    .col-#{$prefix}-offset-#{$i} {
-      margin-left: 100% / $columns * $i;
+  @if $prefix != 'xs' {
+    @for $i from 1 through $columns {
+      .col-#{$prefix}-#{$i} {
+        flex: 0 0 100% / $columns * $i;
+      }
+      .col-#{$prefix}-offset-#{$i} {
+        margin-left: 100% / $columns * $i;
+      }
     }
   }
 }
@@ -23,64 +25,30 @@
   @param {string} $prefix - the name of the class prefix
 */
 @mixin columns-create($prefix) {
-  @for $i from 1 through $columns {
-  	.col-#{$prefix}-#{$i} {
-  		flex: 0 0 100%;
-  	}
-    .col-#{$prefix}-offset-#{$i} {
-  		margin-left: 0;
-  	}
-  }
-}
-
-
-/*
-  Mixin to create extra small column classes.
-  These classes doesn't have any breakpoints at the moment
-*/
-@mixin columns-create-xs() {
-  @for $i from 1 through $columns {
-    .col-xs-#{$i} {
-      flex: 0 0 100% / $columns * $i;
+  // xs columns initial state are not changed
+  // with media queries and thus are created with
+  // different flex value than the rest of the columns
+  @if $prefix != 'xs' {
+    @for $i from 1 through $columns {
+      .col-#{$prefix}-#{$i} {
+        flex: 0 0 100%;
+      }
+      .col-#{$prefix}-offset-#{$i} {
+        margin-left: 0;
+      }
     }
-    .col-xs-offset-#{$i} {
-      margin-left: 100% / $columns * $i;
+  } @else {
+    @for $i from 1 through $columns {
+      .col-xs-#{$i} {
+        flex: 0 0 100% / $columns * $i;
+      }
+      .col-xs-offset-#{$i} {
+        margin-left: 100% / $columns * $i;
+      }
     }
   }
+
 }
-
-
-/*
-  Mixin to create .row helper classes for how to align the children
-  @param {string} $prefix - the  name of the class prefix
-*/
-@mixin alignment-create($prefix) {
-  .#{$prefix}-start {
-    justify-content: flex-start;
-  }
-  .#{$prefix}-end {
-    justify-content: flex-start;
-  }
-  .#{$prefix}-center {
-    justify-content: flex-start;
-  }
-  .#{$prefix}-around {
-    justify-content: flex-start;
-  }
-  .#{$prefix}-between {
-    justify-content: flex-start;
-  }
-  .#{$prefix}-top {
-    align-items: flex-start;
-  }
-  .#{$prefix}-bottom {
-    align-items: flex-start;
-  }
-  .#{$prefix}-middle {
-    align-items: flex-start;
-  }
-}
-
 
 /*
   Mixin to set .row helper classes for how to align the children
@@ -111,4 +79,16 @@
   .#{$prefix}-middle {
     align-items: center;
   }
+}
+
+/*
+  Mixins to be called to generate the grid
+ */
+@mixin grid-generate($prefix) {
+  @include columns-create($prefix);
+  @include alignment-set($prefix);
+}
+
+@mixin grid-size($prefix) {
+  @include columns-set($prefix);
 }

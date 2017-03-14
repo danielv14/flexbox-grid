@@ -35,45 +35,21 @@
   box-sizing: border-box;
 }
 
-/*
- Create default columns state for each column prefix.
-*/
-@include columns-create('sm');
-@include columns-create('md');
-@include columns-create('lg');
-// xs-classes are handled differently and should be included last
-// See mixin for more info
-@include columns-create-xs();
 
 /*
-  Create alignment classes for parent class.
-  Default creating is flex-start.
-  To be modified in media queries
+  Build the grid system in 2 steps.
+  First loop through the breakpoints and create the grid and helper classes.
+  Then loop again and set measurements for each media breakpoint.
 */
-@include alignment-create('sm');
-@include alignment-create('md');
-@include alignment-create('lg');
-
-/*
-Media queries
-*/
-@media (min-width: $screen-sm) {
-  // Set columns with sm prefix
-  @include columns-set('sm');
-  // Set alignment helper classes
-  @include alignment-set('sm');
+@each $val in $breakpoints {
+  $namespace: nth($val, 1);
+  $size: nth($val, 2);
+  @include grid-generate($namespace);
 }
-
-@media (min-width: $screen-md) {
-  // Set columns with md prefix
-  @include columns-set('md');
-  // Set alignment helper classes
-  @include alignment-set('md');
-}
-
-@media (min-width: $screen-lg) {
-  // Set columns with lg prefix
-  @include columns-set('lg');
-  // Set alignment helper classes
-  @include alignment-set('lg');
+@each $val in $breakpoints {
+  $namespace: nth($val, 1);
+  $size: nth($val, 2);
+  @media(min-width: #{$size}) {
+    @include grid-size($namespace);
+  }
 }
