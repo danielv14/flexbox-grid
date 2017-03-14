@@ -151,6 +151,25 @@ $breakpoints: (
 }
 
 /*
+  Mixins to setup containers
+*/
+@mixin setup-containers() {
+  .container {
+    max-width: $container-width;
+    margin: auto;
+    padding: 10px;
+  }
+  .container-fluid {
+    max-width: 98%;
+    margin: auto;
+    padding: 10px;
+    margin: 1%;
+  }
+}
+
+
+
+/*
   Mixins to be called to generate the grid
  */
 @mixin grid-generate($prefix) {
@@ -165,18 +184,9 @@ $breakpoints: (
 /*
   Styling for containers
 */
-.container {
-  max-width: $container-width;
-  margin: auto;
-  padding: 10px;
-}
+@include setup-containers();
 
-.container-fluid {
-  max-width: 98%;
-  margin: auto;
-  padding: 10px;
-  margin: 1%;
-}
+
 
 /*
  Styling for row class which is the flex parent
