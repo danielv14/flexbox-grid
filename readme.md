@@ -40,10 +40,10 @@ This grid system utilizes variables that can easily be modified to customize the
 * `$screen-sm`: Defaults to 768px. Breakpoint for  small screen sizes.
 * `$screen-md`: Defaults to 992px. Breakpoint for medium screen sizes.
 * `$screen-lg`: Defaults to 1200px. Breakpoint for large screen sizes.
-* `$container-xs`: Defaults to 510px. Max-width for containers on extra small screens. Max-width is calculated based on `$gutter` valuea
-* `$container-sm`: Defaults to 740px. Max-width for containers on small screens. Max-width is calculated based on `$gutter` valuea
-* `$container-md`: Defaults to 940px. Max-width for containers on medium screens. Max-width is calculated based on `$gutter` valuea
-* `$container-lg`: Defaults to 1140px. Max-width for containers on large screens. Max-width is calculated based on `$gutter` valuea
+* `$container-xs`: Defaults to 510px. Max-width for containers on extra small screens. Max-width is calculated based on `$gutter` value
+* `$container-sm`: Defaults to 740px. Max-width for containers on small screens. Max-width is calculated based on `$gutter` value
+* `$container-md`: Defaults to 940px. Max-width for containers on medium screens. Max-width is calculated based on `$gutter` value
+* `$container-lg`: Defaults to 1140px. Max-width for containers on large screens. Max-width is calculated based on `$gutter` value
 
 
 
